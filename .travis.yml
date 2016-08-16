@@ -1,6 +1,6 @@
 language: java
 # skip the default install (mvn install -DskipTests=true) to speed up the build
-install: ant 
+install : ant init build
 script: ant test
 jdk:
 - openjdk7
