@@ -1,27 +1,25 @@
 
 <project name="AutoTestsSelenium1" default="jar" basedir=".">
 
-<property name="dir.src" value="src"/>
-<property name="dir.build" value="build"/>
-<property name="dir.dest" value="dest"/>
+<target name="unit-test-1" >
 
-<target name="clean" description="Removing the all generated files.">
-<delete dir="${dir.build}"/>
-<delete dir="${dir.dest}"/>
-</target>
+  <junit printsummary="yes" haltonfailure="yes">
 
-<target name="prepare" depends="clean">
-<mkdir dir="${dir.build}"/>
-<mkdir dir="${dir.dest}"/>
-<mkdir dir="${dir.src}"/>
-</target>
+    <classpath>
+      <pathelement location="${project.class.path}"/>
+      <pathelement location="${build.tests}"/>
+      <pathelement path="${java.class.path}"/>
+    </classpath>
 
-<target name="compile" depends="prepare" description="Compilation of all source code.">
-<javac srcdir="${dir.src}" destdir="${dir.build}"/>
-</target>
+    <test name="tests.OregTest"
+             haltonfailure="no" outfile="result">
 
-<target name="jar" depends="compile" description="Generates Roseindia.jar file in to the 'dest' directory.">
-<jar jarfile="${dir.dest}/roseindia.jar" basedir="${dir.build}"/>
+      <formatter type="plain"/>
+      <formatter type="xml"/>
+
+    </test>
+
+  </junit>
 </target>
 
 </project>
