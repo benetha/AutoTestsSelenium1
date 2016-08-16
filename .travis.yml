@@ -10,4 +10,4 @@ curl -s -X POST \
   -H "Travis-API-Version: 3" \
   -H "Authorization: token xxxxxx" \
   -d "$body" \
-  https://api.travis-ci.org/repo/travis-ci%2FAutotestsSelenium1/requests
+  https://travis-ci.org/benetha/AutotestsSelenium1/requests
