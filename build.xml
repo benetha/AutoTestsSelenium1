@@ -12,7 +12,6 @@
     <path id="AutoTestsSelenium1.classpath">
         <pathelement location="bin"/>
         <pathelement location="lib/selenium-server-standalone-2.53.1.jar"/>
-        
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -64,12 +63,7 @@
     <target name="test">
   <junit printsummary="yes" haltonfailure="yes">
 
-    <classpath>
-      <pathelement location="${project.class.path}"/>
-      <pathelement location="${build.tests}"/>
-      <pathelement path="${java.class.path}"/>
-    </classpath>
-
+   <classpath refid="AutoTestsSelenium1.classpath"/>
     <test name="tests.OregTest"
              haltonfailure="no" outfile="result">
 
