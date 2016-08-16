@@ -1,2 +1,6 @@
 language: java
-$ mvn test
+# skip the default install (mvn install -DskipTests=true) to speed up the build
+install: true
+script: mvn install
+jdk:
+- openjdk7
