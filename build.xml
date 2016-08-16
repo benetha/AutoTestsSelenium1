@@ -12,7 +12,6 @@
     <path id="AutoTestsSelenium1.classpath">
         <pathelement location="bin"/>
         <pathelement location="lib/selenium-server-standalone-2.53.1.jar"/>
-        <pathelement location=".classpath"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -61,10 +60,10 @@
         <antcall target="build"/>
     </target>
     
-  <target name="test">
+  <target name="test" depends="build">
         <pathelement location="bin"/>
         <pathelement location="lib/selenium-server-standalone-2.53.1.jar"/>
-        <pathelement location=".classpath"/>
+        
   <junit printsummary="yes" haltonfailure="yes">
     <test name="tests.OregTest"
              haltonfailure="no" outfile="result">
