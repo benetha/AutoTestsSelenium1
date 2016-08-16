@@ -62,7 +62,9 @@
     </target>
     
   <target name="test">
-    <classpath refid="AutoTestsSelenium1.classpath"/>
+        <pathelement location="bin"/>
+        <pathelement location="lib/selenium-server-standalone-2.53.1.jar"/>
+        <pathelement location=".classpath"/>
   <junit printsummary="yes" haltonfailure="yes">
     <test name="tests.OregTest"
              haltonfailure="no" outfile="result">
